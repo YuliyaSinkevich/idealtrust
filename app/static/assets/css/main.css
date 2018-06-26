@@ -28,7 +28,7 @@ body {
 
 .navbar-nav li a {
     color: white !important;
-    margin: 0 23px;
+    margin: 0 15px !important;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 12px;
@@ -95,19 +95,6 @@ section {
     background-size: cover;
 }
 
-#advantages {
-    color: rgb(0, 0, 0);
-}
-
-.advantages-title {
-    margin-top: 110px;
-    margin-bottom: 50px;
-}
-
-#statistic {
-    background-color: rgb(90, 96, 112);
-}
-
 .vertical-align {
     display: flex;
     align-items: center;
@@ -122,7 +109,7 @@ section {
     line-height: 2.5rem;
 }
 
-#about-main .btn {
+#about-main .btn, #participate .btn {
     padding: 10px 0 !important;
     margin: 30px 0 30px !important;
     background-color: rgb(255, 133, 10);
@@ -156,4 +143,47 @@ section {
 .conditions a:hover {
     border-bottom: 1px solid rgb(255, 255, 255);
     text-decoration: none;
+}
+
+.jumbotron {
+    color: rgb(75, 75, 75);
+    background-color: inherit !important;
+    padding-right: 15% !important;
+    padding-left: 15% !important;
+    padding-top: 120px !important;
+}
+
+.jumbotron h1 {
+    font-size: 53px;
+}
+.jumbotron p {
+    padding: 30px 70px;
+}
+
+#what-we-do, #team {
+    background-color: rgb(247, 247, 247);
+}
+
+#what-we-do h1, #team h1 {
+    font-size: 53px;
+}
+
+#participate .btn {
+    padding: 17px 70px !important;
+}
+
+#team h1 {
+    margin-bottom: 50px;
+}
+#team img {
+    width: 200px;
+    height: 200px;
+}
+#advantages, #what-we-do, #team {
+    color: rgb(75, 75, 75);
+}
+
+.advantages-title {
+    margin-top: 110px;
+    margin-bottom: 50px;
 }

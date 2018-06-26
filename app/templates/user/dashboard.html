@@ -6,12 +6,6 @@ Dashboard | {{ config['PUBLIC_CONFIG'].site.title }}
 
 {% block styles %}
 {{super()}}
-<!-- Bootstrap Form Helpers -->
-<link rel="stylesheet" type="text/css"
-      href="{{url_for('static', filename='assets/bootstrapformhelpers/css/bootstrap-formhelpers.min.css')}}"/>
-<!-- Bootstrap Date picker Helpers -->
-<link rel="stylesheet" type="text/css"
-      href="{{url_for('static', filename='assets/bootstrap-datetimepicker-4.17.47/css/bootstrap-datetimepicker.min.css')}}"/>
 {% endblock %}
 
 {% block content %}
@@ -30,16 +24,8 @@ Dashboard | {{ config['PUBLIC_CONFIG'].site.title }}
         </div>
     </div>
 </div>
-
-
 {% endblock %}
 
 {% block scripts %}
 {{ super() }}
-<!-- http://bootstrapformhelpers.com -->
-<script src="{{url_for('static', filename='assets/bootstrapformhelpers/js/bootstrap-formhelpers.min.js')}}"></script>
-
-<!--- http://eonasdan.github.io -->
-<script src="{{url_for('static', filename='assets/js/moment-with-locales.min.js')}}"></script>
-<script src="{{url_for('static', filename='assets/bootstrap-datetimepicker-4.17.47/js/bootstrap-datetimepicker.min.js')}}"></script>
 {% endblock %}

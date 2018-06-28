@@ -152,10 +152,6 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .navbar {
-        background-color: rgba(111, 202, 89, 0.8) !important;
-    }
-
     .navbar-nav li a {
         margin: 0 23px;
     }

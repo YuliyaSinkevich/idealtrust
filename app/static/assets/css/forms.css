@@ -24,7 +24,7 @@ body {
 }
 
 .panel-title {
-    font-size: 26px !important;
+    font-size: 22px !important;
     font-weight: 900;
     color: rgb(255, 255, 255) !important;
 }
@@ -72,5 +72,8 @@ body {
         margin-right: auto;
         margin-left: auto;
         margin-top: 40px;
+    }
+    .panel-title {
+        font-size: 26px !important;
     }
 }

@@ -161,10 +161,6 @@ section {
     font-size: 53px;
 }
 
-.jumbotron p {
-/ / padding: 30 px 70 px;
-}
-
 hr {
     border-top: 1px solid rgb(220, 220, 220);
 }
@@ -174,16 +170,8 @@ hr {
     top: -46px;
 }
 
-#about .jumbotron {
-    padding-top: 140px !important;
-}
-
 #what-we-do, #team {
     background-color: rgb(247, 247, 247);
-}
-
-#what-we-do h1, #team h1 {
-    font-size: 53px;
 }
 
 #participate {

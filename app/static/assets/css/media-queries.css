@@ -8,6 +8,18 @@
         margin: 0 30%;
     }
 
+    .navbar-brand img {
+        width: 40px;
+        position: relative;
+        top: -9px;
+    }
+
+    .navbar-brand span {
+        font-size: 20px !important;
+        position: relative;
+    / / top: - 12 px;
+    }
+
     .dropdown {
         margin: 0 auto !important;
         float: none !important;
@@ -53,6 +65,18 @@
 
     #about-main .btn {
         margin: 20px 0 20px !important;
+    }
+
+    .jumbotron h1 {
+        font-size: 30px;
+    }
+
+    .hr {
+        margin-top: 50px;
+    }
+
+    #what-we-do h1, #team h1 {
+        font-size: 30px;
     }
 
     .advantage {
@@ -199,6 +223,15 @@
 
     .main-buttons {
         padding: 0 15px !important;;
+    }
+
+    .jumbotron {
+        padding-right: 15% !important;
+        padding-left: 15% !important;
+    }
+
+    .jumbotron p {
+        padding: 30px 70px;
     }
 }
 

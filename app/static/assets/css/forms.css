@@ -19,7 +19,7 @@ body {
 
 .panel-heading {
     padding: 20px 30px;
-    background-color: rgb(111, 202, 89) !important;
+    background-color: rgba(61, 97, 155, 0.9) !important;
     border-bottom: none;
 }
 

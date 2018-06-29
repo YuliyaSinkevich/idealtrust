@@ -22,7 +22,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#about-main">{{ config['PUBLIC_CONFIG'].site.title }}</a>
+                <a class="navbar-brand" href="#about-main"><img
+                        src="{{ url_for('static', filename='assets/images/logo.png') }}"><span>{{
+                    config['PUBLIC_CONFIG'].site.title }}</span></a>
             </div>
             <div class="navbar-collapse collapse navbar-right" id="navbar-top">
                 <ul class="nav navbar-nav">
@@ -83,6 +85,10 @@
                     training, consulting, support and investment for the most promising
                     projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy, and a
                     willingness to follow through.</p>
+                <div class="hr">
+                    <hr>
+                    <img src="{{ url_for('static', filename='assets/images/rocket.png') }}">
+                </div>
             </div>
         </div>
     </section>

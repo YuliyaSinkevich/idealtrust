@@ -71,6 +71,10 @@
         font-size: 30px;
     }
 
+    #about .jumbotron, #what-we-do h1, #team h1 {
+        padding-top: 80px !important;
+    }
+
     .hr {
         margin-top: 50px;
     }
@@ -87,8 +91,13 @@
         width: 50px;
     }
 
-    .hidden-item {
-        display: none;
+    #participate {
+        background: url(../images/bg-section-participate.png) no-repeat 0% 100% scroll;
+        background-size: 170px auto;
+    }
+
+    #team .row div {
+        margin-bottom: 50px;
     }
 }
 
@@ -140,8 +149,12 @@
         padding: 0 10%;
     }
 
-    #about-main .row h1 {
+    #about-main .row h1, .jumbotron h1, #what-we-do h1, #team h1 {
         font-size: 46px !important;
+    }
+
+    #what-we-do h1, #team h1 {
+        padding-top: 80px !important;
     }
 
     .about-description {
@@ -157,20 +170,16 @@
         margin: 0;
     }
 
-    .advantage {
-        height: 180px;
-    }
-
-    .hidden-item {
-        display: none;
+    .jumbotron p {
+        padding: 10px 70px;
     }
 
     .advantage {
         height: 180px;
     }
 
-    .hidden-item {
-        display: none;
+    #participate {
+        background-size: 200px auto;
     }
 }
 
@@ -225,13 +234,20 @@
         padding: 0 15px !important;;
     }
 
-    .jumbotron {
-        padding-right: 15% !important;
-        padding-left: 15% !important;
+    #about .jumbotron, #what-we-do h1 {
+        padding-top: 120px !important;
+    }
+
+    #what-we-do h1, #team h1 {
+        padding-top: 0 !important;
     }
 
     .jumbotron p {
         padding: 30px 70px;
+    }
+
+    #participate {
+        background-size: 300px auto;
     }
 }
 
@@ -258,8 +274,9 @@
         margin: 20px -30px;
     }
 
-    .hidden-item {
-        display: block;
+    .jumbotron {
+        padding-right: 15% !important;
+        padding-left: 15% !important;
     }
 }
 
@@ -272,5 +289,9 @@
 
     .main-buttons {
         padding: 0 3% !important;
+    }
+
+    #participate {
+        background: url(../images/bg-section-participate.png) no-repeat 10% 100% scroll;
     }
 }

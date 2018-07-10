@@ -47,7 +47,7 @@ def set_language(language=constants.DEFAULT_LOCALE):
     founded = next((x for x in constants.AVAILABLE_LOCALES if x == language), None)
     if founded:
         session['language'] = founded
-        
+
     return redirect(url_for('home.start'))
 
 

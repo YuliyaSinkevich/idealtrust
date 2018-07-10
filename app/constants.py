@@ -1,6 +1,5 @@
 PRECISION = 2
 
-
 DATE_JS_FORMAT = '%m/%d/%Y %H:%M:%S'
 
 DEFAULT_LOCALE = 'en'

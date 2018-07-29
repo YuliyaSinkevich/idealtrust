@@ -14,8 +14,8 @@ server {
     server_name www.idealtrust.by;
     return 301 https://idealtrust.by$request_uri;
 
-    ssl_certificate /etc/letsencrypt/live/idealtrust.by/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/idealtrust.by/privkey.pem; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/idealtrust.by/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/idealtrust.by/privkey.pem; # managed by Certbot
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;
@@ -32,8 +32,8 @@ server {
     access_log /var/log/nginx/idealtrust.log;
 
     listen 443 ssl;
-    ssl_certificate /etc/letsencrypt/live/idealtrust.by/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/idealtrust.by/privkey.pem; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/idealtrust.by/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/idealtrust.by/privkey.pem; # managed by Certbot
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
     ssl_prefer_server_ciphers on;

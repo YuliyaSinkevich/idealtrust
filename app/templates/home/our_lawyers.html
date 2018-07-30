@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="../static/assets/css/main.css">{% extends 'layouts/layout.html' %}
+
+{% block title %}
+{{ config['PUBLIC_CONFIG'].site.title }}
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<header>
+
+</header>
+
+<main>
+    <!--Section Team-->
+    <section id="team" class="vertical-align text-center">
+        <div class="container text-center">
+            <h1>Our team</h1>
+            <div class="row">
+                <div class="col-sm-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
+                    <h3><b>Vasilij Ivanov</b></h3>
+                    <p class="post"><i>specialist...</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
+                    <h3><b>Vasilij Ivanov</b></h3>
+                    <p class="post"><i>specialist...</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
+                    <h3><b>Vasilij Ivanov</b></h3>
+                    <p class="post"><i>specialist...</i></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jivosite.js') }}"></script>
+{% endblock %}

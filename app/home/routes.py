@@ -149,6 +149,32 @@ def register():
     return render_template('home/register.html', form=form)
 
 
+# branches
+@home.route('/our_consulting')
+def our_consulting():
+    return render_template('home/our_consulting.html')
+
+
+@home.route('/our_developers')
+def our_developers():
+    return render_template('home/our_developers.html')
+
+
+@home.route('/our_investors')
+def our_investors():
+    return render_template('home/our_investors.html')
+
+
+@home.route('/our_lawyers')
+def our_lawyers():
+    return render_template('home/our_lawyers.html')
+
+
+@home.route('/our_markets')
+def our_markets():
+    return render_template('home/our_markets.html')
+
+
 @babel.localeselector
 def get_locale():
     # if a user is logged in, use the locale from the user settings

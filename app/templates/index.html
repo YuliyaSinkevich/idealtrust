@@ -40,8 +40,8 @@
                         <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[0] }}</a>
                     </li>
                     {% endfor %}
-                    <li><a href="#">{% trans %}Sign in{% endtrans %}</a></li>
-                    <li><a href="#">{% trans %}Sign up{% endtrans %}</a></li>
+                    <li><a href="{{ url_for('home.login') }}">{% trans %}Sign in{% endtrans %}</a></li>
+                    <li><a href="{{ url_for('home.register') }}">{% trans %}Sign up{% endtrans %}</a></li>
                 </ul>
             </div>
         </div>

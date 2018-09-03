@@ -13,7 +13,7 @@ from app.home import home
 import app.constants as constants
 from app.home.user_loging_manager import User
 
-from .forms import SignupForm, SigninForm
+from .forms import SignupForm, SigninForm, ContactForm
 
 CONFIRM_LINK_TTL = 3600
 SALT_LINK = 'email-confirm'
@@ -43,10 +43,20 @@ def load_user(user_id):
     return User.objects(pk=user_id).first()
 
 
-@home.route('/')
+@home.route('/', methods=['GET', 'POST'])
 def start():
     languages = constants.AVAILABLE_LOCALES_PAIRS
-    return render_template('index.html', languages=languages)
+    form = ContactForm()
+
+    if request.method == 'POST':
+        if not form.validate_on_submit():
+            return render_template('index.html', form=form, languages=languages)
+
+        send_email(form.email.data, form.subject.data, form.message.data)
+        return render_template('index.html', form=form, languages=languages, success=True)
+
+    elif request.method == 'GET':
+        return render_template('index.html', form=form, languages=languages)
 
 
 @home.route('/language/<language>')

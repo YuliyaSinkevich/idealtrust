@@ -29,6 +29,13 @@ def flash_error(text: str):
     flash(text, 'danger')
 
 
+def send_email(email: str, subject: str, message: str):
+    config = app.config['PUBLIC_CONFIG']
+    msg = Message(subject, recipients=[config['support']['contact_email']])
+    msg.body = 'From: {0} <{0}> {1}'.format(email, message)
+    mail.send(msg)
+
+
 # routes
 
 @login_manager.user_loader

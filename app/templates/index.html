@@ -7,163 +7,243 @@
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/fonts.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/media-queries.css') }}"/>
 {% endblock %}
 
 {% block content %}
 <header>
-    <!--Navigation-->
     <nav class="navbar navbar-default navbar-fixed-top" id="main-top-navbar">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#about-main"><!--<img
-                        src="{{ url_for('static', filename='assets/images/logo.png') }}">--><span>{{
-                    config['PUBLIC_CONFIG'].site.title }}</span></a>
+                <a class="navbar-brand" href="#"><img alt="Logo IdealTrust"
+                                                      src="{{ url_for('static', filename='assets/images/logo.png') }}"></a>
             </div>
-            <div class="navbar-collapse collapse navbar-right" id="navbar-top">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about">{% trans %}About{% endtrans %}</a></li>
-                    <li><a href="#what-we-do">{% trans %}What we do{% endtrans %}</a></li>
-                    <li><a href="#participate"><b>{% trans %}Participate{% endtrans %}</b></a></li>
-                    <li><a href="#team">{% trans %}Team{% endtrans %}</a></li>
-                    <li><a href="#contacts">{% trans %}Contacts{% endtrans %}</a></li>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right menu-one">
+                    <li><a href="#sectionAbout">{% trans %}ABOUT{% endtrans %}</a></li>
+                    <li><a href="#sectionServices">{% trans %}SERVICES{% endtrans %}</a></li>
+                    <li><a href="#sectionPartners">{% trans %}PARTNERS{% endtrans %}</a></li>
+                    <li><a href="#sectionParticipation"><b>{% trans %}PARTICIPATION{% endtrans %}</b></a></li>
+                    <li><a href="#sectionContacts">{% trans %}CONTACTS{% endtrans %}</a></li>
                 </ul>
-                <div class="dropdown pull-right">
-                    <a class="btn btn-default" data-toggle="dropdown">{% trans %}Language{% endtrans %} <b
-                            class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        {% for language in languages %}
-                        <li>
-                            <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[1] }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav navbar-right menu-two topMenu">
+                    <li class="lang"><a href="#">RU</a></li>
+                    <li class="lang"><a href="#">EN</a></li>
+                    <li><a href="#">{% trans %}Sign in{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Sign up{% endtrans %}</a></li>
+                </ul>
             </div>
+        </div>
+        <!--/.nav-collapse -->
         </div>
     </nav>
 </header>
 
 <main>
-    <!--Section About and buttons 'sign in', 'register'-->
-    <section id="about-main" class="vertical-align">
+
+    <!--Slider-->
+    <section id="slider">
         <div class="container">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-xs-12 col-sm-8 col-md-7">
-                    <h1>We believe in our founders</h1>
-                    <p class="about-description">We help to develop, advise and invest in the most promising projects.
-                        If you have cool ideas - you are welcome!</p>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-3 main-buttons">
-                    <a class="btn btn-block" href="{{ url_for('home.register') }}"><span
-                            class="glyphicon glyphicon-user"></span> {% trans %}Register{% endtrans %}</a>
-                    <a class="btn btn-block" href="{{ url_for('home.login') }}"><span
-                            class="glyphicon glyphicon-log-in"></span> {% trans %}Sign in{% endtrans %}</a>
-                    <p class="conditions text-center">By clicking “Register”, you agree to our <a
-                            href="{{ url_for('home.term_of_use') }}">Term
-                        of use</a> and <a href="{{ url_for('home.private_policy') }}">Private policy</a>.</p>
-                </div>
-                <div class="col-md-1"></div>
-            </div>
         </div>
     </section>
 
     <!--Section About-->
-    <section id="about" class="vertical-align">
+    <section id="sectionAbout" class="vertical-align centered">
         <div class="container">
-            <div class="jumbotron text-center">
-                <h1>We are the team of developers, tech-enthusiasts and investors.</h1>
-                <p>We invite enterprising people who need support in launching their business project. From us -
-                    training, consulting, support and investment for the most promising
-                    projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy, and a
-                    willingness to follow through.</p>
-                <div class="hr">
-                    <hr>
-                    <img src="{{ url_for('static', filename='assets/images/rocket.png') }}">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Section What we do-->
-    <section id="what-we-do" class="vertical-align">
-        <div class="container">
-            <h1 class="text-center advantages-title">What we do</h1>
             <div class="row">
-                <div class="col-md-4 col-lg-4 col-xs-6 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-dev.png') }}">
-                    <h4>{% trans %}Help in developing{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-training.png') }}">
-                    <h4>{% trans %}Counseling and training{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-invest.png') }}">
-                    <h4>{% trans %}Investment of funds{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-legal-aid.png') }}">
-                    <h4>{% trans %}Legal aid{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-business.png') }}">
-                    <h4>{% trans %}Help in business matters{% endtrans %}</h4>
-                </div>
-                <div class="col-xs-6 col-md-4 col-lg-4 text-center advantage">
-                    <img src="{{ url_for('static', filename='assets/images/icon-start.png') }}">
-                    <h4>{% trans %}Help in starting and maintenance{% endtrans %}</h4>
+                <div class="col-xs-0 col-md-7 col-lg-7"></div>
+                <div class="col-xs-12 col-md-5 col-lg-5">
+                    <div class="about">
+                        <h2>About Us</h2>
+                        <h3>We are the team of developers, tech-enthusiasts and investors.</h3>
+                        <p>We invite enterprising people who need support in launching their business project. From us -
+                            training, consulting, support and investment for the most promising
+                            projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy,
+                            and
+                            a
+                            willingness to follow through.</p>
+                        <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!--Section Participate-->
-    <section id="participate" class="vertical-align">
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h1>Free participation</h1>
-                <p>We do not charge for our help. If you have an interesting project and want to show it to the world,
-                    and you are ready hard working, we are
-                    glad to invite you</p>
-                <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Get started{% endtrans %}</a>
-            </div>
-        </div>
-    </section>
-
-    <!--Section Team-->
-    <section id="team" class="vertical-align text-center">
-        <div class="container text-center">
-            <h1>Our team</h1>
+    <!-- Section Services -->
+    <section id="sectionServices">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4 text-center">
-                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
-                    <h3><b>Vasilij Ivanov</b></h3>
-                    <p class="post"><i>specialist...</i></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
-                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                <div class="col-lg-4 service service1 text-center">
+                    <div>
+                        <h3>Technical Support</h3>
+                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
+                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <a class="" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
                 </div>
-                <div class="col-sm-4 text-center">
-                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
-                    <h3><b>Vasilij Ivanov</b></h3>
-                    <p class="post"><i>specialist...</i></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
-                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                <div class="col-lg-4 service service2 text-center">
+                    <div>
+                        <h3>Law Aid</h3>
+                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
+                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <a class="" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
                 </div>
-                <div class="col-sm-4 text-center">
-                    <img src="{{ url_for('static', filename='assets/images/team-member1.jpg') }}" alt="Image">
-                    <h3><b>Vasilij Ivanov</b></h3>
-                    <p class="post"><i>specialist...</i></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
-                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu.</p>
+                <div class="col-lg-4 service service3 text-center">
+                    <div>
+                        <h3>Marketing</h3>
+                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
+                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <a class="" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
                 </div>
+                <div class="col-lg-4 service service4 text-center">
+                    <div>
+                        <h3>Business Consulting</h3>
+                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
+                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <a class="" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 service service5 text-center">
+                    <div>
+                        <h3>Investing</h3>
+                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
+                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <a class="" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 service service6 text-center">
+                    <div>
+                        <h3>Technical Support</h3>
+                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
+                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <a class="" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Partners -->
+    <section id="sectionPartners" class="vertical-align">
+        <div class="container">
+            <h2 class="text-center center-block">Our Partners</h2>
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo3.png') }}"></a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo4.png') }}"></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Participation -->
+    <section id="sectionParticipation" class="vertical-align">
+        <div class="container">
+            <h3 class="text-center center-block">Free participation</h3>
+            <div class="row">
+                <div class="col-xs-0 col-md-1 col-lg-2 text-center"></div>
+                <div class="col-xs-12 col-md-10 col-lg-8 text-center">
+                    <p>We do not charge for our help. If you have an interesting project ant want to show it to the
+                        world, and you are ready hard working, we are glad to invite you.</p>
+                    <a class="btn btn-yellow" href="{{ url_for('home.register') }}">{% trans %}Get Started{% endtrans %}</a>
+                </div>
+                <div class="col-xs-0 col-md-1 col-lg-2 text-center">
+                </div>
+            </div>
+    </section>
+
+    <!-- Section Contacts -->
+    <section id="sectionContacts" class="vertical-align">
+        <div class="container">
+            <h2 class="text-center center-block">Contacts</h2>
+            <div class="row">
+                <div class="col-xs-0 col-md-1 col-lg-2 text-center"></div>
+                <div class="col-xs-12 col-md-10 col-lg-8 text-center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
+                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu. Curabitur ut purus
+                        viverra ante adipiscing dignissim a sed turpis. Mauris est dolor, viverra tristique laoreet vel,
+                        varius adipiscing nunc.</p>
+                </div>
+                <div class="col-xs-0 col-md-1 col-lg-2 text-center">
+                </div>
+            </div>
+            <div class="row text-center contactsInfo">
+                <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+                    <img src="{{ url_for('static', filename='assets/images/iconMap.png') }}">
+                    <h3><b>Adress</b></h3>
+                    <p>Republic of Belarus<br/>
+                        Minsk, Osvobozdeniya str. 5, 200023</p>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4 text-center ">
+                    <img src="{{ url_for('static', filename='assets/images/iconPhone.png') }}">
+                    <h3><b>Phone</b></h3>
+                    <p>+375 29 304-22-01<br/>
+                        +375 44 664-66-87</p>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4 text-center ">
+                    <img src="{{ url_for('static', filename='assets/images/iconEmail.png') }}">
+                    <h3><b>Adress</b></h3>
+                    <p>info@idealtrust.by</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Map -->
+    <section id="sectionContactsMap" class="vertical-align">
+        <div class="container">
+            <div class="row text-center sendEmail">
+                <div class="col-xs-0 col-md-2 col-lg-3 text-center"></div>
+                <div class="col-xs-12 col-md-8 col-lg-6 text-center">
+                    <form action="" method="post" class="form" role="form">
+                        <input class="form-control" id="name" name="name"
+                               placeholder="{% trans %}Enter your name{% endtrans %}"
+                               required
+                               type="text"
+                               value="">
+                        <input class="form-control" id="email" name="email"
+                               placeholder="{% trans %}Enter your email{% endtrans %}"
+                               required
+                               type="text"
+                               value="">
+                        <textarea class="form-control" name="message"
+                                  placeholder="{% trans %}Enter your message{% endtrans %}"></textarea>
+                        <a class="btn btn-yellow" href="#">{% trans %}Send Message{% endtrans %}</a>
+                    </form>
+                </div>
+                <div class="col-xs-0 col-md-2 col-lg-3 text-center"></div>
             </div>
         </div>
     </section>
@@ -174,6 +254,52 @@
     <a href="{{ url_for('home.our_lawyers') }}">Our lawyers</a>
     <a href="{{ url_for('home.our_markets') }}">Our markets</a>
 </main>
+
+<!-- Footer -->
+<footer class="footer vertical-align">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-12 col-xs-12 col-md-4 col-lg-4 text-center logoFooter">
+                <img src="{{ url_for('static', filename='assets/images/logo.png') }}">
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-4 text-center menuFooter">
+                <ul>
+                    <li><a href="#">{% trans %}Technical support{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Law aid{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Marketing{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Business-consulting{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Investing{% endtrans %}</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">{% trans %}About{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Partners{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Participation{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Contacts{% endtrans %}</a></li>
+                    <li><a href="#">{% trans %}Investing{% endtrans %}</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-4 text-center socialNets">
+                <h4><b>Join Us:</b></h4>
+                <div>
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/iconFacebook.png') }}"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/iconLinkedin.png') }}"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/iconTwitter.png') }}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyrights -->
+<footer class="copyrights vertical-align">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <p>Copyright @ 2018. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
 {% endblock %}
 
 {% block scripts %}

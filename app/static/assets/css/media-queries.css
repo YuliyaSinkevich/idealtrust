@@ -1,13 +1,18 @@
-﻿@media only screen and (max-width: 767px) {
+﻿@media (max-width: 767px) {
 .navbar-nav li a:hover {
     text-decoration: underline;
 }
 #sectionAbout {
     background-image: none;
     }
+#sectionParticipation h3 {
+    font-size: 4.2rem;
+}
 }
 
-@media only screen and (max-width: 992px) {
+
+
+@media (max-width: 992px) {
 #sectionAbout {
     background: none;
 }
@@ -22,9 +27,81 @@
 .logoFooter, .socialNets {
     margin: 50px 0;
 }
+.bold {
+font-weight: bold;
+}
 }
 
-@media (min-width: 768px) {
+
+
+@media (max-width: 992px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-default {
+    border-top: none !important;
+  }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        //border-top: 1px solid transparent;
+        //box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .nav li a {
+        padding-left: 70px;
+    }
+
+    .collapse.in{
+        display:block !important;
+    }
+    .menu-one {
+    display: block;
+    }
+
+    .menu-two {
+    border-top: 1px solid #e7e7e7;
+    }
+
+    .menu-two li a {
+    color: #3d4f9b !important;
+    font-size: 1.6rem;
+    }
+
+    .lang {
+    left: 0px;
+}
+}
+
+
+@media (min-width: 1200px)
+#sectionPartners, #sectionContacts {
+    //background-size: 1170px;
+}
+
+
+@media (min-width: 993px) {
   body {
     //margin-top: 130px;
   }
@@ -33,22 +110,34 @@
     width: 100%;
     clear: both;
   }
-  .navbar-default {
+  /*.navbar-default {*/
+  #main-top-navbar {
     border-top: 50px solid #3d4f9b;
+    transition: 0.3s;
+  }
+
+  .menu-one {
+  height: 78px;
   }
   .menu-one>li>a {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding: 10px 0;
+    margin: 0 20px;
   }
   .menu-two {
-    margin-top: -130px;
+    margin-top: -128px;
     clear: both;
   }
   .navbar-nav:nth-child(1) {
-    margin-top: -50px;
+    margin-top: -78px;
   }
   .menu-one li a:hover {
     border-bottom: 2px solid #3d4f9b;
-    padding-bottom: 28px;
+    padding-bottom: 8px;
   }
+
+  #sectionPartners, #sectionContacts {
+    //background-size: 970px;
+}
 }

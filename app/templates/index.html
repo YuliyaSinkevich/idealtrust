@@ -27,7 +27,7 @@
                                                       src="{{ url_for('static', filename='assets/images/logo.png') }}"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right menu-one">
+                <ul class="nav navbar-nav navbar-right menu-one vertical-align">
                     <li><a href="#sectionAbout">{% trans %}ABOUT{% endtrans %}</a></li>
                     <li><a href="#sectionServices">{% trans %}SERVICES{% endtrans %}</a></li>
                     <li><a href="#sectionPartners">{% trans %}PARTNERS{% endtrans %}</a></li>
@@ -40,12 +40,10 @@
                         <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[0] }}</a>
                     </li>
                     {% endfor %}
-                    <li><a href="{{ url_for('home.login') }}">{% trans %}Sign in{% endtrans %}</a></li>
-                    <li><a href="{{ url_for('home.register') }}">{% trans %}Sign up{% endtrans %}</a></li>
+                    <li class="bold"><a href="{{ url_for('home.login') }}">{% trans %}Sign in{% endtrans %}</a></li>
+                    <li class="bold"><a href="{{ url_for('home.register') }}">{% trans %}Sign up{% endtrans %}</a></li>
                 </ul>
             </div>
-        </div>
-        <!--/.nav-collapse -->
         </div>
     </nav>
 </header>
@@ -272,8 +270,6 @@
                     <li><a href="{{ url_for('home.our_consulting') }}">{% trans %}Business-consulting{% endtrans %}</a>
                     </li>
                     <li><a href="{{ url_for('home.our_investors') }}">{% trans %}Investing{% endtrans %}</a></li>
-                    <li><a href="{{ url_for('home.our_developers') }}">{% trans %}Technical support{% endtrans %}</a>
-                    </li>
                 </ul>
                 <ul>
                     <li><a href="#">{% trans %}About{% endtrans %}</a></li>

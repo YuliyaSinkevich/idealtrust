@@ -18,6 +18,29 @@ body {
     border: none;
 }
 
+.navbar-brand {
+  height: 78px;
+  }
+
+.navbar-toggle {
+    margin-top: 23px;
+    border: none;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #f3f3f3;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #3d4f9b;
+    height: 3px;
+}
+
+.navbar-collapse {
+    max-height: 400px !important;
+    overflow: hidden;
+}
+
 .menu-one li a {
     color: #3d4f9b !important;
 }
@@ -157,7 +180,7 @@ section h2::after {
 
 #sectionPartners {
     background: url(../images/bgLogoTransparent.png) no-repeat bottom center scroll;
-    background-size: 100%;
+    background-size: 80%;
 }
 
 #sectionPartners img {
@@ -188,7 +211,7 @@ section h2::after {
     min-height: 700px;
     padding: 50px 0;
     background: url(../images/bgLogoTransparent.png) no-repeat bottom center scroll;
-    background-size: 100%;
+    background-size: 80%;
 }
 
 .contactsInfo {
@@ -260,10 +283,15 @@ section h2::after {
     margin: 20px 10px 0;
 }
 
+.socialNets div img:hover {
+    filter: grayscale(100%);
+}
+
 .copyrights {
     height: 50px;
-    background: #3d4f9b;
-    color: #fff;
+    //background: #3d4f9b;
+    border-top: 1px solid #e7e7e7;
+    //color: #fff;
     font-size: 1.4rem;
 }
 

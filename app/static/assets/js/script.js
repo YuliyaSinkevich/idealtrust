@@ -18,7 +18,6 @@ function scrollFunction() {
 }
 
 
-
 var switcherButton = document.getElementById("switcherBut");
 switcherButton.addEventListener("click", toggle, false);
 

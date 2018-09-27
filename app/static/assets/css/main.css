@@ -224,6 +224,7 @@ section h2::after {
     color: #fff;
 }
 
+
 #sectionContactsMap input, #sectionContactsMap textarea {
     font-size: 1.6rem;
     color: #fff;
@@ -248,6 +249,63 @@ section h2::after {
 
 ::-ms-input-placeholder {
     color: #fff !important;
+}
+
+.sectionContactsMap .container {
+    position: relative;
+}
+
+#switcherWrap {
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    top: -45px;
+    z-index: 3333;
+    position: relative;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#switcherWrap p {
+    margin: 0 20px;
+}
+
+#switcher {
+    width: 62px;
+    height: 32px;
+    background-color: #3d4f9b;
+    border-radius: 30px;
+    padding: 1px;
+}
+
+#switcherBut {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: white;
+    float: left;
+}
+
+#switcherBut:hover {
+    cursor: pointer;
+}
+
+#yandexMap {
+    width: 100%;
+    height: 500px;
+    //box-shadow: 10px 10px 13px 3px rgba(0,0,0,.13);
+    position: absolute;
+    z-index: 2;
+    display: none;
+}
+
+.sendEmail {
+    z-index: 100;
 }
 
 .footer {

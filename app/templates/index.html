@@ -1,320 +1,348 @@
 {% extends 'layouts/layout.html' %}
 
 {% block title %}
-{{ config['PUBLIC_CONFIG'].site.title }}
+    {{ config['PUBLIC_CONFIG'].site.title }}
 {% endblock %}
 
 {% block styles %}
-{{ super() }}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/fonts.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/media-queries.css') }}"/>
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/fonts.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/media-queries.css') }}"/>
 {% endblock %}
 
 {% block content %}
-<header>
-    <nav class="navbar navbar-default navbar-fixed-top" id="main-top-navbar">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                        aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><img alt="Logo IdealTrust"
-                                                      src="{{ url_for('static', filename='assets/images/logo.png') }}"></a>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top" id="main-top-navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img alt="Logo IdealTrust"
+                                                          src="{{ url_for('static', filename='assets/images/logo.png') }}"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right menu-one vertical-align">
+                        <li><a href="#sectionAbout">{% trans %}ABOUT{% endtrans %}</a></li>
+                        <li><a href="#sectionServices">{% trans %}SERVICES{% endtrans %}</a></li>
+                        <li><a href="#sectionPartners">{% trans %}PARTNERS{% endtrans %}</a></li>
+                        <li><a href="#sectionParticipation"><b>{% trans %}PARTICIPATION{% endtrans %}</b></a></li>
+                        <li><a href="#sectionContacts">{% trans %}CONTACTS{% endtrans %}</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right menu-two topMenu">
+                        {% for language in languages %}
+                            <li class="lang">
+                                <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[0] }}</a>
+                            </li>
+                        {% endfor %}
+                        <li class="bold"><a href="{{ url_for('home.login') }}">{% trans %}Sign in{% endtrans %}</a></li>
+                        <li class="bold"><a href="{{ url_for('home.register') }}">{% trans %}Sign up{% endtrans %}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right menu-one vertical-align">
-                    <li><a href="#sectionAbout">{% trans %}ABOUT{% endtrans %}</a></li>
-                    <li><a href="#sectionServices">{% trans %}SERVICES{% endtrans %}</a></li>
-                    <li><a href="#sectionPartners">{% trans %}PARTNERS{% endtrans %}</a></li>
-                    <li><a href="#sectionParticipation"><b>{% trans %}PARTICIPATION{% endtrans %}</b></a></li>
-                    <li><a href="#sectionContacts">{% trans %}CONTACTS{% endtrans %}</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right menu-two topMenu">
-                    {% for language in languages %}
-                    <li class="lang">
-                        <a href="{{ url_for('home.set_language', language=language[0]) }}">{{ language[0] }}</a>
-                    </li>
-                    {% endfor %}
-                    <li class="bold"><a href="{{ url_for('home.login') }}">{% trans %}Sign in{% endtrans %}</a></li>
-                    <li class="bold"><a href="{{ url_for('home.register') }}">{% trans %}Sign up{% endtrans %}</a></li>
-                </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!--Slider-->
+        <section id="slider">
+            <div class="container">
             </div>
-        </div>
-    </nav>
-</header>
+        </section>
 
-<main>
-
-    <!--Slider-->
-    <section id="slider">
-        <div class="container">
-        </div>
-    </section>
-
-    <!--Section About-->
-    <section id="sectionAbout" class="vertical-align centered">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-0 col-md-7 col-lg-7"></div>
-                <div class="col-xs-12 col-md-5 col-lg-5">
-                    <div class="about">
-                        <h2>About Us</h2>
-                        <h3>We are the team of developers, tech-enthusiasts and investors.</h3>
-                        <p>We invite enterprising people who need support in launching their business project. From us -
-                            training, consulting, support and investment for the most promising
-                            projects. From you - the entrepreneurial spirit, business idea, a lot of effort and energy,
-                            and
-                            a
-                            willingness to follow through.</p>
-                        <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+        <!--Section About-->
+        <section id="sectionAbout" class="vertical-align centered">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-0 col-md-7 col-lg-7"></div>
+                    <div class="col-xs-12 col-md-5 col-lg-5">
+                        <div class="about">
+                            <h2>About Us</h2>
+                            <h3>We are the team of developers, tech-enthusiasts and investors.</h3>
+                            <p>We invite enterprising people who need support in launching their business project. From
+                                us -
+                                training, consulting, support and investment for the most promising
+                                projects. From you - the entrepreneurial spirit, business idea, a lot of effort and
+                                energy,
+                                and
+                                a
+                                willingness to follow through.</p>
+                            <a class="btn" href="{{ url_for('home.register') }}">{% trans %}Read more{% endtrans %}</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Services -->
-    <section id="sectionServices">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 service service1 text-center">
-                    <div>
+        <!-- Section Services -->
+        <section id="sectionServices">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 service service1">
                         <h3>Technical Support</h3>
-                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
-                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <ul>
+                            <li>{% trans %} Drafting TS {% endtrans %}</li>
+                            <li>{% trans %} Software Development {% endtrans %}</li>
+                            <li>{% trans %} Audit \ Code evaluation {% endtrans %}</li>
+                            <li>{% trans %} Staff Training {% endtrans %}</li>
+                            <li>{% trans %} Consultations {% endtrans %}</li>
+                        </ul>
                         <a class="" href="{{ url_for('home.our_developers') }}">{% trans %}Read more{% endtrans %}</a>
                     </div>
-                </div>
-                <div class="col-lg-4 service service2 text-center">
-                    <div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 service service2">
                         <h3>Law Aid</h3>
-                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
-                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <ul>
+                            <li>{% trans %} Legal Assistance {% endtrans %}</li>
+                            <li>{% trans %} Due Diligence {% endtrans %}</li>
+                            <li>{% trans %} Legal Support {% endtrans %}</li>
+                            <li>{% trans %} Consultations {% endtrans %}</li>
+                        </ul>
                         <a class="" href="{{ url_for('home.our_lawyers') }}">{% trans %}Read more{% endtrans %}</a>
                     </div>
-                </div>
-                <div class="col-lg-4 service service3 text-center">
-                    <div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 service service3">
                         <h3>Marketing</h3>
-                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
-                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <ul>
+                            <li>{% trans %} Development of a Business Plan {% endtrans %}</li>
+                            <li>{% trans %} Testing a Business Model {% endtrans %}</li>
+                            <li>{% trans %} Promotion, SEO {% endtrans %}</li>
+                            <li>{% trans %} Presentation Preparation {% endtrans %}</li>
+                            <li>{% trans %} Competitor Analysis {% endtrans %}</li>
+                            <li>{% trans %} Consultations {% endtrans %}</li>
+                        </ul>
                         <a class="" href="{{ url_for('home.our_markets') }}">{% trans %}Read more{% endtrans %}</a>
                     </div>
-                </div>
-                <div class="col-lg-4 service service4 text-center">
-                    <div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 service service4">
                         <h3>Business Consulting</h3>
-                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
-                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <ul>
+                            <li>{% trans %} Accounting {% endtrans %}</li>
+                            <li>{% trans %} Audit {% endtrans %}</li>
+                            <li>{% trans %} Finance and Management {% endtrans %}</li>
+                            <li>{% trans %} Search and Recruitment {% endtrans %}</li>
+                            <li>{% trans %} Consultations {% endtrans %}</li>
+                        </ul>
                         <a class="" href="{{ url_for('home.our_consulting') }}">{% trans %}Read more{% endtrans %}</a>
                     </div>
-                </div>
-                <div class="col-lg-4 service service5 text-center">
-                    <div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 service service5">
                         <h3>Investing</h3>
-                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
-                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                        <ul>
+                            <li>{% trans %} Investment Attraction {% endtrans %}</li>
+                            <li>{% trans %} Mentorship {% endtrans %}</li>
+                            <li>{% trans %} Entering Foreign Markets {% endtrans %}</li>
+                        </ul>
                         <a class="" href="{{ url_for('home.our_investors') }}">{% trans %}Read more{% endtrans %}</a>
                     </div>
-                </div>
-                <div class="col-lg-4 service service6 text-center">
-                    <div>
-                        <h3>Technical Support</h3>
-                        <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit,
-                            orci eu consectetur blandit, diam nunc tristique nibh, eu aliquam ipsum.</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6 service service6">
+                        <h3>Other</h3>
+                        <ul>
+                            <li>{% trans %} Help and Support for Foreigners {% endtrans %}</li>
+                            <li>{% trans %} Organization of Business Meetings, Business Visits {% endtrans %}</li>
+                            <li>{% trans %} Adaptation Assistance {% endtrans %}</li>
+                            <li>{% trans %} Translations {% endtrans %}</li>
+                            <li>{% trans %} Visa Support {% endtrans %}</li>
+                            <li>{% trans %} Providing Coworking {% endtrans %}</li>
+                        </ul>
                         <a class="" href="{{ url_for('home.our_developers') }}">{% trans %}Read more{% endtrans %}</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section Partners -->
-    <section id="sectionPartners" class="vertical-align">
+            </div>
+        </section>
+
+        <!-- Section Partners -->
+        <section id="sectionPartners" class="vertical-align">
+            <div class="container">
+                <h2 class="text-center center-block">Our Partners</h2>
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo3.png') }}"></a>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo4.png') }}"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                    </div>
+                    <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Participation -->
+        <section id="sectionParticipation" class="vertical-align">
+            <div class="container">
+                <h3 class="text-center center-block">Free participation</h3>
+                <div class="row">
+                    <div class="col-xs-0 col-md-1 col-lg-2 text-center"></div>
+                    <div class="col-xs-12 col-md-10 col-lg-8 text-center">
+                        <p>We do not charge for our help. If you have an interesting project ant want to show it to the
+                            world, and you are ready hard working, we are glad to invite you.</p>
+                        <a class="btn btn-yellow" href="{{ url_for('home.register') }}">{% trans %}Get
+                            Started{% endtrans %}</a>
+                    </div>
+                    <div class="col-xs-0 col-md-1 col-lg-2 text-center">
+                    </div>
+                </div>
+        </section>
+
+        <!-- Section Contacts -->
+        <section id="sectionContacts" class="vertical-align">
+            <div class="container">
+                <h2 class="text-center center-block">Contacts</h2>
+                <div class="row">
+                    <div class="col-xs-0 col-md-1 col-lg-2 text-center"></div>
+                    <div class="col-xs-12 col-md-10 col-lg-8 text-center">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu
+                            consectetur
+                            blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu. Curabitur ut
+                            purus
+                            viverra ante adipiscing dignissim a sed turpis. Mauris est dolor, viverra tristique laoreet
+                            vel,
+                            varius adipiscing nunc.</p>
+                    </div>
+                    <div class="col-xs-0 col-md-1 col-lg-2 text-center">
+                    </div>
+                </div>
+                <div class="row text-center contactsInfo">
+                    <div class="col-xs-12 col-md-4 col-lg-4 text-center">
+                        <img src="{{ url_for('static', filename='assets/images/iconMap.png') }}">
+                        <h3><b>Adress</b></h3>
+                        <p>Republic of Belarus<br/>
+                            Minsk, Stadionnay str. 5, 200053</p>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 text-center ">
+                        <img src="{{ url_for('static', filename='assets/images/iconPhone.png') }}">
+                        <h3><b>Phone</b></h3>
+                        <p>+375(44)704-28-37<br/>
+                            +375(33)652-92-91</p>
+                    </div>
+                    <div class="col-xs-12 col-md-4 col-lg-4 text-center ">
+                        <img src="{{ url_for('static', filename='assets/images/iconEmail.png') }}">
+                        <h3><b>Adress</b></h3>
+                        <p>
+                            <a href="mailto:{{ config['PUBLIC_CONFIG'].support.contact_email }}">{{ config['PUBLIC_CONFIG'].support.contact_email }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Map -->
+        <section id="sectionContactsMap" class="vertical-align">
+            <div class="container">
+                <div id="switcherWrap" class="center-block">
+                    <p>Form</p>
+                    <div id="switcher" class="switchToMap">
+                        <div id="switcherBut"></div>
+                    </div>
+                    <p>Map</p>
+                </div>
+                <div class="row text-center sendEmail">
+                    <div class="col-xs-0 col-md-2 col-lg-3 text-center"></div>
+                    <div class="col-xs-12 col-md-8 col-lg-6 text-center">
+                        <form action="" method="post" class="form" role="form">
+                            {{ form.hidden_tag() }}
+                            <input class="form-control" id="email" name="email"
+                                   placeholder="{% trans %}Enter your email{% endtrans %}"
+                                   required
+                                   type="text"
+                                   value="">
+                            <input class="form-control" id="subject" name="subject"
+                                   placeholder="{% trans %}Enter subject{% endtrans %}"
+                                   required
+                                   type="text"
+                                   value="">
+                            <textarea class="form-control" name="message"
+                                      placeholder="{% trans %}Enter your message{% endtrans %}"></textarea>
+                            <input class="btn" id="submit" name="submit" type="submit"
+                                   value="{% trans %}Send Message{% endtrans %}">
+                        </form>
+                    </div>
+                    <div class="col-xs-0 col-md-2 col-lg-3 text-center"></div>
+                </div>
+            </div>
+            <div id="yandexMap" class="">
+                <script type="text/javascript" charset="utf-8" async
+                        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8cae9063819931e2964fa16fb2dc0a4f995dbc417915785f6b46458649e9b395&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer vertical-align">
         <div class="container">
-            <h2 class="text-center center-block">Our Partners</h2>
-            <div class="row">
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+            <div class="row text-center">
+                <div class="col-xs-12 col-xs-12 col-md-4 col-lg-4 text-center logoFooter">
+                    <img src="{{ url_for('static', filename='assets/images/logo.png') }}">
                 </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
+                <div class="col-xs-12 col-md-4 col-lg-4 text-center menuFooter">
+                    <ul>
+                        <li><a href="{{ url_for('home.our_developers') }}">{% trans %}Technical
+                            support{% endtrans %}</a>
+                        </li>
+                        <li><a href="{{ url_for('home.our_lawyers') }}">{% trans %}Law aid{% endtrans %}</a></li>
+                        <li><a href="{{ url_for('home.our_markets') }}">{% trans %}Marketing{% endtrans %}</a></li>
+                        <li><a href="{{ url_for('home.our_consulting') }}">{% trans %}
+                            Business-consulting{% endtrans %}</a>
+                        </li>
+                        <li><a href="{{ url_for('home.our_investors') }}">{% trans %}Investing{% endtrans %}</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">{% trans %}About{% endtrans %}</a></li>
+                        <li><a href="#">{% trans %}Partners{% endtrans %}</a></li>
+                        <li><a href="#">{% trans %}Participation{% endtrans %}</a></li>
+                        <li><a href="#">{% trans %}Contacts{% endtrans %}</a></li>
+                        <li><a href="#">{% trans %}Investing{% endtrans %}</a></li>
+                    </ul>
                 </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo3.png') }}"></a>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo4.png') }}"></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo2.png') }}"></a>
-                </div>
-                <div class="col-xs-12 col-md-3 col-lg-3 text-center partnerLogoBlock">
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/logo1.png') }}"></a>
+                <div class="col-xs-12 col-md-4 col-lg-4 text-center socialNets">
+                    <h4><b>Join Us:</b></h4>
+                    <div>
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/iconFacebook.png') }}"></a>
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/iconLinkedin.png') }}"></a>
+                        <a href="#"><img src="{{ url_for('static', filename='assets/images/iconTwitter.png') }}"></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <!-- Section Participation -->
-    <section id="sectionParticipation" class="vertical-align">
+    <!-- Copyrights -->
+    <footer class="copyrights vertical-align">
         <div class="container">
-            <h3 class="text-center center-block">Free participation</h3>
             <div class="row">
-                <div class="col-xs-0 col-md-1 col-lg-2 text-center"></div>
-                <div class="col-xs-12 col-md-10 col-lg-8 text-center">
-                    <p>We do not charge for our help. If you have an interesting project ant want to show it to the
-                        world, and you are ready hard working, we are glad to invite you.</p>
-                    <a class="btn btn-yellow" href="{{ url_for('home.register') }}">{% trans %}Get Started{% endtrans
-                        %}</a>
-                </div>
-                <div class="col-xs-0 col-md-1 col-lg-2 text-center">
-                </div>
-            </div>
-    </section>
-
-    <!-- Section Contacts -->
-    <section id="sectionContacts" class="vertical-align">
-        <div class="container">
-            <h2 class="text-center center-block">Contacts</h2>
-            <div class="row">
-                <div class="col-xs-0 col-md-1 col-lg-2 text-center"></div>
-                <div class="col-xs-12 col-md-10 col-lg-8 text-center">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam hendrerit, orci eu consectetur
-                        blandit, diam nunc tristique nibh, eu aliquam ipsum enim pellentesque arcu. Curabitur ut purus
-                        viverra ante adipiscing dignissim a sed turpis. Mauris est dolor, viverra tristique laoreet vel,
-                        varius adipiscing nunc.</p>
-                </div>
-                <div class="col-xs-0 col-md-1 col-lg-2 text-center">
-                </div>
-            </div>
-            <div class="row text-center contactsInfo">
-                <div class="col-xs-12 col-md-4 col-lg-4 text-center">
-                    <img src="{{ url_for('static', filename='assets/images/iconMap.png') }}">
-                    <h3><b>Adress</b></h3>
-                    <p>Republic of Belarus<br/>
-                        Minsk, Stadionnay str. 5, 200053</p>
-                </div>
-                <div class="col-xs-12 col-md-4 col-lg-4 text-center ">
-                    <img src="{{ url_for('static', filename='assets/images/iconPhone.png') }}">
-                    <h3><b>Phone</b></h3>
-                    <p>+375(44)704-28-37<br/>
-                        +375(33)652-92-91</p>
-                </div>
-                <div class="col-xs-12 col-md-4 col-lg-4 text-center ">
-                    <img src="{{ url_for('static', filename='assets/images/iconEmail.png') }}">
-                    <h3><b>Adress</b></h3>
-                    <p><a href="mailto:{{ config['PUBLIC_CONFIG'].support.contact_email }}">{{
-                        config['PUBLIC_CONFIG'].support.contact_email }}</a></p>
+                <div class="text-center">
+                    <p>Copyright @ 2018. All rights reserved.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Section Map -->
-    <section id="sectionContactsMap" class="vertical-align">
-        <div class="container">
-            <div id="switcherWrap" class="center-block">
-                <p>Form</p>
-                <div id="switcher" class="switchToMap">
-                    <div id="switcherBut"></div>
-                </div>
-                <p>Map</p>
-            </div>
-            <div class="row text-center sendEmail">
-                <div class="col-xs-0 col-md-2 col-lg-3 text-center"></div>
-                <div class="col-xs-12 col-md-8 col-lg-6 text-center">
-                    <form action="" method="post" class="form" role="form">
-                        {{ form.hidden_tag() }}
-                        <input class="form-control" id="email" name="email"
-                               placeholder="{% trans %}Enter your email{% endtrans %}"
-                               required
-                               type="text"
-                               value="">
-                        <input class="form-control" id="subject" name="subject"
-                               placeholder="{% trans %}Enter subject{% endtrans %}"
-                               required
-                               type="text"
-                               value="">
-                        <textarea class="form-control" name="message"
-                                  placeholder="{% trans %}Enter your message{% endtrans %}"></textarea>
-                        <input class="btn" id="submit" name="submit" type="submit"
-                               value="{% trans %}Send Message{% endtrans %}">
-                    </form>
-                </div>
-                <div class="col-xs-0 col-md-2 col-lg-3 text-center"></div>
-            </div>
-        </div>
-        <div id="yandexMap" class="">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8cae9063819931e2964fa16fb2dc0a4f995dbc417915785f6b46458649e9b395&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
-        </div>
-    </section>
-</main>
-
-<!-- Footer -->
-<footer class="footer vertical-align">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-xs-12 col-xs-12 col-md-4 col-lg-4 text-center logoFooter">
-                <img src="{{ url_for('static', filename='assets/images/logo.png') }}">
-            </div>
-            <div class="col-xs-12 col-md-4 col-lg-4 text-center menuFooter">
-                <ul>
-                    <li><a href="{{ url_for('home.our_developers') }}">{% trans %}Technical support{% endtrans %}</a>
-                    </li>
-                    <li><a href="{{ url_for('home.our_lawyers') }}">{% trans %}Law aid{% endtrans %}</a></li>
-                    <li><a href="{{ url_for('home.our_markets') }}">{% trans %}Marketing{% endtrans %}</a></li>
-                    <li><a href="{{ url_for('home.our_consulting') }}">{% trans %}Business-consulting{% endtrans %}</a>
-                    </li>
-                    <li><a href="{{ url_for('home.our_investors') }}">{% trans %}Investing{% endtrans %}</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#">{% trans %}About{% endtrans %}</a></li>
-                    <li><a href="#">{% trans %}Partners{% endtrans %}</a></li>
-                    <li><a href="#">{% trans %}Participation{% endtrans %}</a></li>
-                    <li><a href="#">{% trans %}Contacts{% endtrans %}</a></li>
-                    <li><a href="#">{% trans %}Investing{% endtrans %}</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-md-4 col-lg-4 text-center socialNets">
-                <h4><b>Join Us:</b></h4>
-                <div>
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/iconFacebook.png') }}"></a>
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/iconLinkedin.png') }}"></a>
-                    <a href="#"><img src="{{ url_for('static', filename='assets/images/iconTwitter.png') }}"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Copyrights -->
-<footer class="copyrights vertical-align">
-    <div class="container">
-        <div class="row">
-            <div class="text-center">
-                <p>Copyright @ 2018. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 {% endblock %}
 
 {% block scripts %}
-{{ super() }}
-<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
-<script src="{{ url_for('static', filename='assets/js/jivosite.js') }}"></script>
+    {{ super() }}
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/jivosite.js') }}"></script>
 {% endblock %}

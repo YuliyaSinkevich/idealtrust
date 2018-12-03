@@ -3,14 +3,13 @@ body {
     font-size: 1.6rem !important;
     line-height: 2.8rem;
     letter-spacing: 0.05rem;
-    //margin-top: 70px;
 }
 
 .navbar {
     font-family: Arial;
     min-height: 80px;
     letter-spacing: 0.03em;
-    box-shadow: 0 0 13px 3px rgba(0,0,0,.13);
+    box-shadow: 0 0 13px 3px rgba(0, 0, 0, .13);
 }
 
 .navbar-default {
@@ -19,8 +18,8 @@ body {
 }
 
 .navbar-brand {
-  height: 78px;
-  }
+    height: 78px;
+}
 
 .navbar-toggle {
     margin-top: 23px;
@@ -62,7 +61,6 @@ body {
 .menu-two li a:hover {
     text-decoration: underline;
 }
-
 
 .btn {
     font-family: "Arial";
@@ -131,22 +129,22 @@ section h2::after {
 }
 
 .service {
-   color: #fff;
-   min-height: 380px;
-   padding: 30px 10px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+    color: #fff;
+    min-height: 380px;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .service ul {
-   margin: 15px 0;
+    margin: 15px 0;
 }
 
 .service a {
-   color: #fff;
-   text-decoration: underline;
+    color: #fff;
+    text-decoration: underline;
 }
 
 .service a:hover {
@@ -157,6 +155,7 @@ section h2::after {
     background: url(../images/bgServices1.png) no-repeat top center scroll;
     background-size: cover;
 }
+
 .service2 {
     background: url(../images/bgServices2.png) no-repeat top center scroll;
     background-size: cover;
@@ -166,14 +165,17 @@ section h2::after {
     background: url(../images/bgServices3.png) no-repeat top center scroll;
     background-size: cover;
 }
+
 .service4 {
     background: url(../images/bgServices4.png) no-repeat top center scroll;
     background-size: cover;
 }
+
 .service5 {
     background: url(../images/bgServices5.png) no-repeat top center scroll;
     background-size: cover;
 }
+
 .service6 {
     background: url(../images/bgServices1.png) no-repeat top center scroll;
     background-size: cover;
@@ -196,7 +198,6 @@ section h2::after {
 .partnerLogoBlock {
     min-height: 130px;
 }
-
 
 #sectionParticipation {
     height: 760px;
@@ -224,7 +225,6 @@ section h2::after {
     background: #3d4f9b;
     color: #fff;
 }
-
 
 #sectionContactsMap input, #sectionContactsMap textarea {
     font-size: 1.6rem;
@@ -299,7 +299,7 @@ section h2::after {
 #yandexMap {
     width: 100%;
     height: 500px;
-    //box-shadow: 10px 10px 13px 3px rgba(0,0,0,.13);
+/ / box-shadow: 10 px 10 px 13 px 3 px rgba(0, 0, 0, .13);
     position: absolute;
     z-index: 2;
     display: none;
@@ -348,9 +348,9 @@ section h2::after {
 
 .copyrights {
     height: 50px;
-    //background: #3d4f9b;
+/ / background: #3d4f9b;
     border-top: 1px solid #e7e7e7;
-    //color: #fff;
+/ / color: #fff;
     font-size: 1.4rem;
 }
 
